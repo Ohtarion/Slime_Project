@@ -36,11 +36,3 @@ app.innerHTML = "";
 slimes.forEach(s => {
     app.innerHTML += createCard(s);
 });
-
-
-console.log(slime[0].name);
-console.log(slime[0].fav_food);
-console.log(slime[1].name);
-console.log(slime[1].fav_food);
-console.log(slime[2].name);
-console.log(slime[2].fav_food);

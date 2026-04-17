@@ -71,7 +71,17 @@ input {
 }
 
 h1 {
+  background: linear-gradient(90deg, red, orange, yellow, green, indigo, violet);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
   text-align: center;
   margin-top: 20px;
+}
 
+h2 {
+  text-align: center;
+  margin-top: 10px;
+  color: #1e90ff;
 }
