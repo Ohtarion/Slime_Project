@@ -19,6 +19,29 @@ let slimes = [
 
 ];
 
+let food = [
+    { name: "Pickle Pear", type: "Fruit", fav_of: "Dervish Slime" },
+    { name: "Roostro", type: "Meat", fav_of: "Hunter Slime" },
+    { name: "Odd Onion", type: "Veggie", fav_of: "Crystal Slime" },
+    { name: "Mint Mango", type: "Fruit", fav_of: "Honey Slime" },
+    { name: "Briar Hen", type: "Meat", fav_of: "Boom Slime" },
+    { name: "None", type: "None", fav_of: "Ringtail Slime" },
+    { name: "Moondew Nectar", type: "Nectar", fav_of: "Flutter Slime" },
+    { name: "Pomegranite", type: "Fruit", fav_of: "Batty Slime" },
+    { name: "Heart Beat", type: "Veggie", fav_of: "Rock Slime" },
+    { name: "Sea Hen", type: "Meat", fav_of: "Angler Slime" },
+    { name: "Cuberry", type: "Fruit", fav_of: "Phosphor Slime" },
+    { name: "Stony Hen", type: "Meat", fav_of: "Tabby Slime" },
+    { name: "Water Lettuce", type: "Veggie", fav_of: "Cotton Slime" },
+    { name: "Painted Hen", type: "Meat", fav_of: "Tangle Slime" },
+    { name: "Polaricherry", type: "Fruit", fav_of: "Twin Slime" },
+    { name: "Candied Hen", type: "Meat", fav_of: "Sloomber Slime" }
+];
+
+// Sort arrays alphabetically by name
+slimes.sort((a, b) => a.name.localeCompare(b.name));
+food.sort((a, b) => a.name.localeCompare(b.name));
+
 let app = document.getElementById("app");
 
 function createCard(slime) {
@@ -31,8 +54,33 @@ function createCard(slime) {
     `;
 }
 
-app.innerHTML = "";
+function renderSlimes() {
+    app.innerHTML = "";
 
-slimes.forEach(s => {
-    app.innerHTML += createCard(s);
-});
+    slimes.forEach(s => {
+        app.innerHTML += createCard(s);
+    });
+}
+
+function renderFood() {
+    app.innerHTML = "";
+
+    food.forEach(f => {
+        app.innerHTML += `
+        <div class="card">
+            <h2>${f.name}</h2>
+            <p>Type: ${f.type}</p>
+            <p>Favourite of: ${f.fav_of}</p>
+        </div>
+        `;
+    });
+}
+
+
+let slimeBtn = document.getElementById("slime-btn");
+let foodBtn = document.getElementById("food-btn");
+
+slimeBtn.addEventListener("click", renderSlimes);
+foodBtn.addEventListener("click", renderFood);
+
+renderSlimes();
