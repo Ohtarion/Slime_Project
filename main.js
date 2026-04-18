@@ -1,5 +1,5 @@
 let slimes = [
-    { name: "Pink Slime", diet: "None", fav_food: "Test" },
+    { name: "Pink Slime", diet: "None", fav_food: "None" },
     { name: "Dervish Slime", diet: "Fruit", fav_food: "Pickle Pear" },
     { name: "Hunter Slime", diet: "Meat", fav_food: "Roostro" },
     { name: "Crystal Slime", diet: "Veggie", fav_food: "Odd Onion" },
