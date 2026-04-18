@@ -25,7 +25,6 @@ let food = [
     { name: "Odd Onion", type: "Veggie", fav_of: "Crystal Slime" },
     { name: "Mint Mango", type: "Fruit", fav_of: "Honey Slime" },
     { name: "Briar Hen", type: "Meat", fav_of: "Boom Slime" },
-    { name: "None", type: "None", fav_of: "Ringtail Slime" },
     { name: "Moondew Nectar", type: "Nectar", fav_of: "Flutter Slime" },
     { name: "Pomegranite", type: "Fruit", fav_of: "Batty Slime" },
     { name: "Heart Beat", type: "Veggie", fav_of: "Rock Slime" },
