@@ -2,6 +2,7 @@ let catCard = {
     name: "Mysterious Cat",
     diet: "???",
     fav_food: "Whiskas",
+    favourite: "Angi & Marten",
     extra: "Eaten by: Nobody, he will fuck you up",
     img: "breed_abyssinian_cat.jpg"
 };
@@ -68,6 +69,7 @@ function createCatCard(cat) {
         <h2>${cat.name}</h2>
         <img src="${cat.img}" style="width: 200px;">
         <p>Fav food: ${cat.fav_food}</p>
+        <p>Favourite: ${cat.favourite}</p>
         <p>${cat.extra}</p>
     </div>
     `;
