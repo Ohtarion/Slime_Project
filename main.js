@@ -2,7 +2,7 @@ let catCard = {
     name: "Mysterious Cat",
     diet: "???",
     fav_food: "Whiskas",
-    favourite: "Angi & Marten",
+    favourite: "Angi",
     extra: "Eaten by: Nobody, he will fuck you up",
     img: "breed_abyssinian_cat.jpg"
 };
