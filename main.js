@@ -1,21 +1,29 @@
+let catCard = {
+    name: "Mysterious Cat",
+    diet: "???",
+    fav_food: "Whiskas",
+    extra: "Eaten by: Nobody, he will fuck you up",
+    img: "breed_abyssinian_cat.jpg"
+};
+
 let slimes = [
-    { name: "Pink Slime", diet: "None", fav_food: "None" },
-    { name: "Dervish Slime", diet: "Fruit", fav_food: "Pickle Pear" },
-    { name: "Hunter Slime", diet: "Meat", fav_food: "Roostro" },
-    { name: "Crystal Slime", diet: "Veggie", fav_food: "Odd Onion" },
-    { name: "Honey Slime", diet: "Fruit", fav_food: "Mint Mango" },
-    { name: "Boom Slime", diet: "Meat", fav_food: "Briar Hen" },
-    { name: "Ringtail Slime", diet: "Everything", fav_food: "None" },
-    { name: "Flutter Slime", diet: "Nectar", fav_food: "Moondew Nectar" },
-    { name: "Batty Slime", diet: "Fruit", fav_food: "Pomegranite" },
-    { name: "Rock Slime", diet: "Veggie", fav_food: "Heart Beat" },
-    { name: "Angler Slime", diet: "Meat", fav_food: "Sea Hen" },
-    { name: "Phosphor Slime", diet: "Fruit", fav_food: "Cuberry" },
-    { name: "Tabby Slime", diet: "Meat", fav_food: "Stony Hen" },
-    { name: "Cotton Slime", diet: "Veggie", fav_food: "Water Lettuce" },
-    { name: "Tangle Slime", diet: "Meat", fav_food: "Painted Hen" },
-    { name: "Twin Slime", diet: "Fruit", fav_food: "Polaricherry" },
-    { name: "Sloomber Slime", diet: "Meat", fav_food: "Candied Hen" }
+    { name: "Pink Slime", diet: "None", fav_food: "None", img: "Slime_Images/Pink_Slime.jpg" },
+    { name: "Dervish Slime", diet: "Fruit", fav_food: "Pickle Pear", img: "Slime_Images/Dervish_Slime.jpg" },
+    { name: "Hunter Slime", diet: "Meat", fav_food: "Roostro", img: "Slime_Images/Hunter_Slime.jpg" },
+    { name: "Crystal Slime", diet: "Veggie", fav_food: "Odd Onion", img: "Slime_Images/Crystal_Slime.jpg" },
+    { name: "Honey Slime", diet: "Fruit", fav_food: "Mint Mango", img: "Slime_Images/Honey_Slime.jpg" },
+    { name: "Boom Slime", diet: "Meat", fav_food: "Briar Hen", img: "Slime_Images/Boom-Slime.jpg" },
+    { name: "Ringtail Slime", diet: "Everything", fav_food: "None", img: "Slime_Images/Ringtail_Slime.jpg" },
+    { name: "Flutter Slime", diet: "Nectar", fav_food: "Moondew Nectar", img: "Slime_Images/Flutter_Slime.jpg" },
+    { name: "Batty Slime", diet: "Fruit", fav_food: "Pomegranite", img: "Slime_Images/Batty_Slime.jpg" },
+    { name: "Rock Slime", diet: "Veggie", fav_food: "Heart Beat", img: "Slime_Images/Rock_Slime.jpg" },
+    { name: "Angler Slime", diet: "Meat", fav_food: "Sea Hen", img: "Slime_Images/Angler_Slime.png" },
+    { name: "Phosphor Slime", diet: "Fruit", fav_food: "Cuberry", img: "Slime_Images/Phosphor_Slime.jpg" },
+    { name: "Tabby Slime", diet: "Meat", fav_food: "Stony Hen", img: "Slime_Images/Tabby_Slime.jpg" },
+    { name: "Cotton Slime", diet: "Veggie", fav_food: "Water Lettuce", img: "Slime_Images/Cotton_Slime.jpg" },
+    { name: "Tangle Slime", diet: "Meat", fav_food: "Painted Hen", img: "Slime_Images/Tangle_Slime.jpg" },
+    { name: "Twin Slime", diet: "Fruit", fav_food: "Polaricherry", img: "Slime_Images/Twin_Slime.jpg" },
+    { name: "Sloomber Slime", diet: "Meat", fav_food: "Candied Hen", img: "Slime_Images/Sloomber_Slime.png" }
 ];
 
 let food = [
@@ -47,25 +55,53 @@ function createCard(slime) {
     return `
     <div class="card">
       <h2>${slime.name}</h2>
+      <img src="${slime.img}" alt="${slime.name}">
       <p>Diet: ${slime.diet}</p>
       <p>Favourite: ${slime.fav_food}</p>
     </div>
     `;
 }
 
+function createCatCard(cat) {
+    return `
+    <div class="card">
+        <h2>${cat.name}</h2>
+        <img src="${cat.img}" style="width: 200px;">
+        <p>Fav food: ${cat.fav_food}</p>
+        <p>${cat.extra}</p>
+    </div>
+    `;
+}
+
 function renderSlimes() {
-    catImg.style.display = "none";
     app.innerHTML = "";
 
-    slimes.forEach(s => {
+    let randomIndex = Math.floor(Math.random() * (slimes.length + 1));
+
+    slimes.forEach((s, index) => {
+        if (index === randomIndex) {
+            app.innerHTML += createCatCard(catCard);
+        }
+
         app.innerHTML += createCard(s);
     });
+
+    // Falls randomIndex ganz am Ende liegt
+    if (randomIndex === slimes.length) {
+        app.innerHTML += createCatCard(catCard);
+    }
 }
 
 function renderFood() {
     app.innerHTML = "";
 
-    food.forEach(f => {
+    let randomIndex = Math.floor(Math.random() * (food.length + 1));
+
+    food.forEach((f, index) => {
+        if (index === randomIndex) {
+            app.innerHTML += createCatCard(catCard);
+        }
+
         app.innerHTML += `
         <div class="card">
             <h2>${f.name}</h2>
@@ -74,6 +110,10 @@ function renderFood() {
         </div>
         `;
     });
+
+    if (randomIndex === food.length) {
+        app.innerHTML += createCatCard(catCard);
+    }
 }
 
 function renderCats() {
