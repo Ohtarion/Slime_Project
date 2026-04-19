@@ -37,8 +37,10 @@ let food = [
     { name: "Candied Hen", type: "Meat", fav_of: "Sloomber Slime" }
 ];
 
-// Sort arrays alphabetically by name
-slimes.sort((a, b) => a.name.localeCompare(b.name));
+let cat =
+
+    // Sort arrays alphabetically by name
+    slimes.sort((a, b) => a.name.localeCompare(b.name));
 food.sort((a, b) => a.name.localeCompare(b.name));
 
 let app = document.getElementById("app");
@@ -75,11 +77,23 @@ function renderFood() {
     });
 }
 
+function renderCats() {
+    app.innerHTML = `
+    <div class="card">
+        <h2>Cat</h2>
+        <img src="cat.png" style="width: 300px;">
+    </div>
+    `;
+}
+
 
 let slimeBtn = document.getElementById("slime-btn");
 let foodBtn = document.getElementById("food-btn");
+let catBtn = document.getElementById("cat-btn");
 
 slimeBtn.addEventListener("click", renderSlimes);
 foodBtn.addEventListener("click", renderFood);
+catBtn.addEventListener("click", renderCats);
+
 
 renderSlimes();
