@@ -16,7 +16,6 @@ let slimes = [
     { name: "Tangle Slime", diet: "Meat", fav_food: "Painted Hen" },
     { name: "Twin Slime", diet: "Fruit", fav_food: "Polaricherry" },
     { name: "Sloomber Slime", diet: "Meat", fav_food: "Candied Hen" }
-
 ];
 
 let food = [
@@ -37,13 +36,12 @@ let food = [
     { name: "Candied Hen", type: "Meat", fav_of: "Sloomber Slime" }
 ];
 
-let cat =
-
-    // Sort arrays alphabetically by name
-    slimes.sort((a, b) => a.name.localeCompare(b.name));
+// Arrays sortieren
+slimes.sort((a, b) => a.name.localeCompare(b.name));
 food.sort((a, b) => a.name.localeCompare(b.name));
 
 let app = document.getElementById("app");
+let catImg = document.getElementById("cat");
 
 function createCard(slime) {
     return `
@@ -56,6 +54,7 @@ function createCard(slime) {
 }
 
 function renderSlimes() {
+    catImg.style.display = "none";
     app.innerHTML = "";
 
     slimes.forEach(s => {
@@ -78,22 +77,24 @@ function renderFood() {
 }
 
 function renderCats() {
-    app.innerHTML = `
-    <div class="card">
-        <h2>Cat</h2>
-        <img src="cat.png" style="width: 300px;">
-    </div>
-    `;
+    app.innerHTML = "";
+
+    if (catImg.style.display === "none") {
+        catImg.style.display = "block";
+    } else {
+        catImg.style.display = "none";
+    }
 }
 
-
+// Buttons holen
 let slimeBtn = document.getElementById("slime-btn");
 let foodBtn = document.getElementById("food-btn");
 let catBtn = document.getElementById("cat-btn");
 
+// Events
 slimeBtn.addEventListener("click", renderSlimes);
 foodBtn.addEventListener("click", renderFood);
 catBtn.addEventListener("click", renderCats);
 
-
+// Default View
 renderSlimes();
