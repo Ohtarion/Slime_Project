@@ -78,43 +78,56 @@ function createCatCard(cat) {
 function renderSlimes() {
     app.innerHTML = "";
 
-    let randomIndex = Math.floor(Math.random() * (slimes.length + 1));
+    if (Math.random() < 0.5) { // 1/10 chance to include the cat
+        let randomIndex = Math.floor(Math.random() * (slimes.length + 1));
 
-    slimes.forEach((s, index) => {
-        if (index === randomIndex) {
+        slimes.forEach((s, index) => {
+            if (index === randomIndex) {
+                app.innerHTML += createCatCard(catCard);
+            }
+            app.innerHTML += createCard(s);
+        });
+
+        // Falls randomIndex ganz am Ende liegt
+        if (randomIndex === slimes.length) {
             app.innerHTML += createCatCard(catCard);
         }
-
-        app.innerHTML += createCard(s);
-    });
-
-    // Falls randomIndex ganz am Ende liegt
-    if (randomIndex === slimes.length) {
-        app.innerHTML += createCatCard(catCard);
+    } else {
+        slimes.forEach(s => app.innerHTML += createCard(s));
     }
 }
 
 function renderFood() {
     app.innerHTML = "";
 
-    let randomIndex = Math.floor(Math.random() * (food.length + 1));
+    if (Math.random() < 0.1) { // 1/10 chance to include the cat
+        let randomIndex = Math.floor(Math.random() * (food.length + 1));
 
-    food.forEach((f, index) => {
-        if (index === randomIndex) {
+        food.forEach((f, index) => {
+            if (index === randomIndex) {
+                app.innerHTML += createCatCard(catCard);
+            }
+
+            app.innerHTML += `
+            <div class="card">
+                <h2>${f.name}</h2>
+                <p>Type: ${f.type}</p>
+                <p>Favourite of: ${f.fav_of}</p>
+            </div>
+            `;
+        });
+
+        if (randomIndex === food.length) {
             app.innerHTML += createCatCard(catCard);
         }
-
-        app.innerHTML += `
+    } else {
+        food.forEach(f => app.innerHTML += `
         <div class="card">
             <h2>${f.name}</h2>
             <p>Type: ${f.type}</p>
             <p>Favourite of: ${f.fav_of}</p>
         </div>
-        `;
-    });
-
-    if (randomIndex === food.length) {
-        app.innerHTML += createCatCard(catCard);
+        `);
     }
 }
 

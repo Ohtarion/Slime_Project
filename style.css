@@ -3,6 +3,13 @@ body {
   background-size: cover;
   color: white;
   font-family: sans-serif;
+  width: 100%;
+  min-height: 100vh;
+  background-position: center center;
+  background-repeat: no-repeat;
+  text-align: center;
+  margin: 0;
+  padding: 0;
 }
 
 header {
