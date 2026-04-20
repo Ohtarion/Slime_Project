@@ -90,6 +90,8 @@ body {
   padding: 15px;
   /* Add transition for smooth hover effects */
   transition: 0.2s;
+
+  font-size: 1.2em;
 }
 
 /* Hover styles for cards */
