@@ -1,3 +1,4 @@
+// Define an object for the cat card with properties: name, diet, favorite food, favorite person, extra info, and image source
 let catCard = {
     name: "Mysterious Cat",
     diet: "???",
@@ -7,6 +8,7 @@ let catCard = {
     img: "breed_abyssinian_cat.jpg"
 };
 
+// Define an array of slime objects, each with name, diet, favorite food, and image source
 let slimes = [
     { name: "Pink Slime", diet: "None", fav_food: "None", img: "Slime_Images/Pink_Slime.jpg" },
     { name: "Dervish Slime", diet: "Fruit", fav_food: "Pickle Pear", img: "Slime_Images/Dervish_Slime.jpg" },
@@ -27,6 +29,7 @@ let slimes = [
     { name: "Sloomber Slime", diet: "Meat", fav_food: "Candied Hen", img: "Slime_Images/Sloomber_Slime.png" }
 ];
 
+// Define an array of food objects, each with name, type, and which slime it's favorite of
 let food = [
     { name: "Pickle Pear", type: "Fruit", fav_of: "Dervish Slime" },
     { name: "Roostro", type: "Meat", fav_of: "Hunter Slime" },
@@ -45,13 +48,17 @@ let food = [
     { name: "Candied Hen", type: "Meat", fav_of: "Sloomber Slime" }
 ];
 
-// Arrays sortieren
+// Sort the slimes array alphabetically by name
 slimes.sort((a, b) => a.name.localeCompare(b.name));
+// Sort the food array alphabetically by name
 food.sort((a, b) => a.name.localeCompare(b.name));
 
+// Get the DOM element with ID "app" where content will be rendered
 let app = document.getElementById("app");
+// Get the DOM element with ID "cat" which is the cat image
 let catImg = document.getElementById("cat");
 
+// Function to create HTML for a slime card
 function createCard(slime) {
     return `
     <div class="card">
@@ -63,6 +70,7 @@ function createCard(slime) {
     `;
 }
 
+// Function to create HTML for the cat card
 function createCatCard(cat) {
     return `
     <div class="card">
@@ -75,12 +83,17 @@ function createCatCard(cat) {
     `;
 }
 
+// Function to render the slimes view
 function renderSlimes() {
+    // Clear the app content
     app.innerHTML = "";
 
+    // Check if random chance (50% here, but should be 0.1 for 1/10) to include the cat
     if (Math.random() < 0.5) { // 1/10 chance to include the cat
+        // Generate a random index to insert the cat card
         let randomIndex = Math.floor(Math.random() * (slimes.length + 1));
 
+        // Loop through slimes and insert cat card at random index
         slimes.forEach((s, index) => {
             if (index === randomIndex) {
                 app.innerHTML += createCatCard(catCard);
@@ -88,21 +101,27 @@ function renderSlimes() {
             app.innerHTML += createCard(s);
         });
 
-        // Falls randomIndex ganz am Ende liegt
+        // If randomIndex is at the end, add cat card after all slimes
         if (randomIndex === slimes.length) {
             app.innerHTML += createCatCard(catCard);
         }
     } else {
+        // If no cat, just render all slimes
         slimes.forEach(s => app.innerHTML += createCard(s));
     }
 }
 
+// Function to render the food view
 function renderFood() {
+    // Clear the app content
     app.innerHTML = "";
 
+    // Check for 1/10 chance to include the cat
     if (Math.random() < 0.1) { // 1/10 chance to include the cat
+        // Generate random index for cat insertion
         let randomIndex = Math.floor(Math.random() * (food.length + 1));
 
+        // Loop through food and insert cat at random index
         food.forEach((f, index) => {
             if (index === randomIndex) {
                 app.innerHTML += createCatCard(catCard);
@@ -117,10 +136,12 @@ function renderFood() {
             `;
         });
 
+        // Add cat at end if index matches
         if (randomIndex === food.length) {
             app.innerHTML += createCatCard(catCard);
         }
     } else {
+        // Render food without cat
         food.forEach(f => app.innerHTML += `
         <div class="card">
             <h2>${f.name}</h2>
@@ -131,9 +152,12 @@ function renderFood() {
     }
 }
 
+// Function to render the cat view (toggles the cat image)
 function renderCats() {
+    // Clear app content
     app.innerHTML = "";
 
+    // Toggle the display of the cat image
     if (catImg.style.display === "none") {
         catImg.style.display = "block";
     } else {
@@ -141,15 +165,15 @@ function renderCats() {
     }
 }
 
-// Buttons holen
+// Get button elements by ID
 let slimeBtn = document.getElementById("slime-btn");
 let foodBtn = document.getElementById("food-btn");
 let catBtn = document.getElementById("cat-btn");
 
-// Events
+// Add event listeners to buttons to call respective render functions
 slimeBtn.addEventListener("click", renderSlimes);
 foodBtn.addEventListener("click", renderFood);
 catBtn.addEventListener("click", renderCats);
 
-// Default View
+// Default view: render slimes on page load
 renderSlimes();

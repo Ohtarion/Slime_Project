@@ -1,123 +1,223 @@
+/* Styles for the body element, which is the main container of the page */
 body {
+  /* Set background color to dark gray (#111) with a background image 'background.png' */
   background: #111 url('background.png') no-repeat center center scroll;
+  /* Size the background image to cover the entire area */
   background-size: cover;
+  /* Set text color to white */
   color: white;
+  /* Set font family to sans-serif */
   font-family: sans-serif;
+  /* Set width to 100% of the viewport */
   width: 100%;
+  /* Set minimum height to 100% of the viewport height */
   min-height: 100vh;
+  /* Position the background image at center center */
   background-position: center center;
+  /* Do not repeat the background image */
   background-repeat: no-repeat;
+  /* Center-align text */
   text-align: center;
+  /* Remove default margin */
   margin: 0;
+  /* Remove default padding */
   padding: 0;
 }
 
+/* Styles for header elements (though not used in HTML, general styling) */
 header {
+  /* Add padding around the header */
   padding: 20px;
+  /* Center-align text in header */
   text-align: center;
 }
 
+/* Styles for the main app container where content is dynamically inserted */
 #app {
+  /* Use CSS Grid for layout */
   display: grid;
+  /* Create columns that auto-fill with minimum width 220px and flexible */
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  /* Add gap between grid items */
   gap: 20px;
+  /* Add padding around the app container */
   padding: 20px;
 }
 
+/* Styles for the buttons container */
 .buttons {
+  /* Add padding around the buttons */
   padding: 20px;
+  /* Use flexbox for horizontal layout */
   display: flex;
+  /* Center-align items horizontally */
   justify-content: center;
+  /* Add gap between buttons */
   gap: 20px;
+  /* Add bottom margin */
   margin-bottom: 20px;
 }
 
+/* Styles for buttons inside the buttons container */
 .buttons button {
+  /* Add padding inside buttons */
   padding: 10px 16px;
+  /* Remove border */
   border: none;
+  /* Add border radius for rounded corners */
   border-radius: 8px;
+  /* Set background color to dark gray */
   background: #2a2a2a;
+  /* Set text color to white */
   color: white;
+  /* Change cursor to pointer on hover */
   cursor: pointer;
+  /* Add transition for smooth hover effects */
   transition: all 0.3s ease;
+  /* Add box shadow for depth */
   box-shadow: 0 2px 4px rgba(0,0,0,0.2);
 }
 
+/* Hover styles for buttons */
 .buttons button:hover {
+  /* Change background color on hover */
   background: #3a3a3a;
+  /* Increase box shadow on hover */
   box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  /* Add upward translation on hover */
   transform: translateY(-2px);
 }
+
+/* Styles for card elements (used for slimes, food, cat) */
 .card {
+  /* Set background color to dark gray */
   background: #2a2a2a;
+  /* Add border radius for rounded corners */
   border-radius: 12px;
+  /* Add padding inside cards */
   padding: 15px;
+  /* Add transition for smooth hover effects */
   transition: 0.2s;
 }
 
+/* Hover styles for cards */
 .card:hover {
+  /* Scale up slightly on hover */
   transform: scale(1.03);
 }
 
+/* Styles for images inside cards */
 .card img {
+  /* Set image width to 100% of card */
   width: 100%;
+  /* Add border radius to images */
   border-radius: 8px;
 }
 
+/* Styles for tag elements (not used in current HTML) */
 .tag {
+  /* Set background color to medium gray */
   background: #444;
+  /* Add padding inside tags */
   padding: 4px 8px;
+  /* Add border radius */
   border-radius: 6px;
+  /* Display as inline block */
   display: inline-block;
+  /* Add top margin */
   margin-top: 5px;
 }
+
+/* Styles for tabs container (not used) */
 .tabs {
+  /* Use flexbox for layout */
   display: flex;
+  /* Center-align items */
   justify-content: center;
+  /* Add gap between items */
   gap: 10px;
 }
+
+/* Styles for input elements */
 input {
+  /* Add padding inside inputs */
   padding: 10px;
+  /* Set width to 300px */
   width: 300px;
+  /* Add border radius */
   border-radius: 8px;
+  /* Remove border */
   border: none;
-  
+  /* Set background color to dark gray */
   background: #2a2a2a;
+  /* Set text color to white */
   color: white;
-} 
+}
+
+/* Styles for buttons in tabs (similar to .buttons button) */
 .tabs button {
+  /* Add padding */
   padding: 10px 16px;
+  /* Remove border */
   border: none;
+  /* Add border radius */
   border-radius: 8px;
+  /* Set background */
   background: #2a2a2a;
+  /* Set text color */
   color: white;
+  /* Cursor pointer */
   cursor: pointer;
+  /* Transition */
   transition: all 0.3s ease;
+  /* Box shadow */
   box-shadow: 0 2px 4px rgba(0,0,0,0.2);
 }
+
+/* Hover for tabs buttons */
 .tabs button:hover {
+  /* Change background */
   background: #3a3a3a;
+  /* Increase shadow */
   box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  /* Translate up */
   transform: translateY(-2px);
 }
+
+/* Active state for tabs buttons */
 .tabs button.active {
+  /* Set background to blue */
   background: #1e90ff;
+  /* Increase shadow */
   box-shadow: 0 4px 8px rgba(0,0,0,0.3);
 }
 
+/* Styles for h1 headings */
 h1 {
+  /* Create a gradient background for text */
   background: linear-gradient(90deg, #ff69b4, #ffff00, #32cd32, #800080);
+  /* Clip background to text for webkit browsers */
   -webkit-background-clip: text;
+  /* Make text fill transparent to show gradient */
   -webkit-text-fill-color: transparent;
+  /* Standard background clip for text */
   background-clip: text;
+  /* Fallback color */
   color: transparent;
+  /* Center align */
   text-align: center;
+  /* Top margin */
   margin-top: 20px;
+  /* Add text shadow for effect */
   text-shadow: 3px 3px 8px rgba(0,0,0,0.9), 0 0 10px rgba(255,255,255,0.5);
 }
 
+/* Styles for h2 headings */
 h2 {
+  /* Center align */
   text-align: center;
+  /* Top margin */
   margin-top: 10px;
+  /* Set color to blue */
   color: #1e90ff;
 }

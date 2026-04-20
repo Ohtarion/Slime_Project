@@ -1,27 +1,43 @@
 <!doctype html>
+<!-- This declares the document type as HTML5 -->
 <html lang="en">
+  <!-- The root element of the HTML document, with language set to English -->
   <head>
+    <!-- Contains meta-information about the document -->
     <meta charset="UTF-8" />
+    <!-- Specifies the character encoding as UTF-8 for proper text display -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Sets the viewport for responsive design on mobile devices -->
     <title>Slime Guide</title>
+    <!-- The title of the webpage that appears in the browser tab -->
     <link rel="stylesheet" href="style.css" />
+    <!-- Links to the external CSS file for styling the page -->
   </head>
 
   <body>
+    <!-- The main content of the webpage -->
     <h1><u>Slime Guide</u></h1>
+    <!-- A heading element displaying the title "Slime Guide" with underline -->
 
     <div class="buttons">
+      <!-- A container div for the buttons, styled with the "buttons" class -->
       <button id="slime-btn">Show Slimes</button>
+      <!-- A button to show the slimes, with ID "slime-btn" for JavaScript interaction -->
       <button id="food-btn">Show Food</button>
+      <!-- A button to show the food, with ID "food-btn" -->
       <img
         id="cat"
         src="breed_abyssinian_cat.jpg"
         style="display: none; width: 300px"
       />
+      <!-- An image of a cat, initially hidden (display: none), with ID "cat" and width 300px -->
       <button id="cat-btn">Show Cat</button>
+      <!-- A button to toggle the cat image, with ID "cat-btn" -->
     </div>
     <main id="app"></main>
+    <!-- The main content area where dynamic content (slimes, food, etc.) will be inserted, with ID "app" -->
 
     <script src="main.js"></script>
+    <!-- Links to the external JavaScript file for interactivity -->
   </body>
 </html>
