@@ -24,14 +24,6 @@ body {
   padding: 0;
 }
 
-/* Styles for header elements (though not used in HTML, general styling) */
-header {
-  /* Add padding around the header */
-  padding: 20px;
-  /* Center-align text in header */
-  text-align: center;
-}
-
 /* Styles for the main app container where content is dynamically inserted */
 #app {
   /* Use CSS Grid for layout */
@@ -114,83 +106,6 @@ header {
   border-radius: 8px;
 }
 
-/* Styles for tag elements (not used in current HTML) */
-.tag {
-  /* Set background color to medium gray */
-  background: #444;
-  /* Add padding inside tags */
-  padding: 4px 8px;
-  /* Add border radius */
-  border-radius: 6px;
-  /* Display as inline block */
-  display: inline-block;
-  /* Add top margin */
-  margin-top: 5px;
-}
-
-/* Styles for tabs container (not used) */
-.tabs {
-  /* Use flexbox for layout */
-  display: flex;
-  /* Center-align items */
-  justify-content: center;
-  /* Add gap between items */
-  gap: 10px;
-}
-
-/* Styles for input elements */
-input {
-  /* Add padding inside inputs */
-  padding: 10px;
-  /* Set width to 300px */
-  width: 300px;
-  /* Add border radius */
-  border-radius: 8px;
-  /* Remove border */
-  border: none;
-  /* Set background color to dark gray */
-  background: #2a2a2a;
-  /* Set text color to white */
-  color: white;
-}
-
-/* Styles for buttons in tabs (similar to .buttons button) */
-.tabs button {
-  /* Add padding */
-  padding: 10px 16px;
-  /* Remove border */
-  border: none;
-  /* Add border radius */
-  border-radius: 8px;
-  /* Set background */
-  background: #2a2a2a;
-  /* Set text color */
-  color: white;
-  /* Cursor pointer */
-  cursor: pointer;
-  /* Transition */
-  transition: all 0.3s ease;
-  /* Box shadow */
-  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-}
-
-/* Hover for tabs buttons */
-.tabs button:hover {
-  /* Change background */
-  background: #3a3a3a;
-  /* Increase shadow */
-  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-  /* Translate up */
-  transform: translateY(-2px);
-}
-
-/* Active state for tabs buttons */
-.tabs button.active {
-  /* Set background to blue */
-  background: #1e90ff;
-  /* Increase shadow */
-  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-}
 
 /* Styles for h1 headings */
 h1 {
@@ -220,4 +135,6 @@ h2 {
   margin-top: 10px;
   /* Set color to blue */
   color: #1e90ff;
+
+  font-size: 2 em;
 }

@@ -88,8 +88,8 @@ function renderSlimes() {
     // Clear the app content
     app.innerHTML = "";
 
-    // Check if random chance (50% here, but should be 0.1 for 1/10) to include the cat
-    if (Math.random() < 0.5) { // 1/10 chance to include the cat
+    // Check if random chance (5/10) to include the cat
+    if (Math.random() < 0.1) {
         // Generate a random index to insert the cat card
         let randomIndex = Math.floor(Math.random() * (slimes.length + 1));
 
